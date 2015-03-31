@@ -8,8 +8,8 @@ module Spree
     has_attached_file :attachment,
                       styles: { mini: '48x48>', small: '100x100>', product: '240x240>', large: '600x600>' },
                       storage: :s3,
-                      default_style: :product,
-                      path: '/spree/products/:id/:style/:basename.:extension',
+                      default_style: :banner,
+                      path: '/spree/banners/:id/:style/:basename.:extension',
                       default_url: "/spree/:class/:id/:style/:basename.:extension",
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
                       s3_protocol:    "https",
@@ -40,11 +40,11 @@ module Spree
     #
     # # Load user defined paperclip settings
 
-    Spree::BannerBox.attachment_definitions[:attachment][:styles] = ActiveSupport::JSON.decode(SpreeBanner::Config[:banner_styles]).symbolize_keys!
-    Spree::BannerBox.attachment_definitions[:attachment][:path] = SpreeBanner::Config[:banner_path]
-    Spree::BannerBox.attachment_definitions[:attachment][:url] = SpreeBanner::Config[:banner_url]
-    Spree::BannerBox.attachment_definitions[:attachment][:default_url] = SpreeBanner::Config[:banner_default_url]
-    Spree::BannerBox.attachment_definitions[:attachment][:default_style] = SpreeBanner::Config[:banner_default_style]
+    # Spree::BannerBox.attachment_definitions[:attachment][:styles] = ActiveSupport::JSON.decode(SpreeBanner::Config[:banner_styles]).symbolize_keys!
+    # Spree::BannerBox.attachment_definitions[:attachment][:path] = SpreeBanner::Config[:banner_path]
+    # Spree::BannerBox.attachment_definitions[:attachment][:url] = SpreeBanner::Config[:banner_url]
+    # Spree::BannerBox.attachment_definitions[:attachment][:default_url] = SpreeBanner::Config[:banner_default_url]
+    # Spree::BannerBox.attachment_definitions[:attachment][:default_style] = SpreeBanner::Config[:banner_default_style]
 
     # for adding banner_boxes which are closely related to existing ones
     # define "duplicate_extra" for site-specific actions, eg for additional fields
