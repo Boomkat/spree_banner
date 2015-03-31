@@ -1,5 +1,11 @@
 module Spree
   class BannerBox < ActiveRecord::Base
+    preference :banner_default_url, :string, default: '/spree/banners/:id/:style/:basename.:extension'
+    preference :banner_path, :string, default: ':rails_root/public/spree/banners/:id/:style/:basename.:extension'
+    preference :banner_url, :string, default: '/spree/banners/:id/:style/:basename.:extension'
+    preference :banner_styles, :string, default: "{\"mini\":\"48x48>\",\"small\":\"100x100>\",\"large\":\"800x200#\"}"
+    preference :banner_default_style, :string, default: 'small'
+
     acts_as_list :scope => :category
     
     has_attached_file :attachment,
@@ -22,11 +28,10 @@ module Spree
         where(:enabled => true).where(:category => categories)
       end
     }
-
-    # Load user defined paperclip settings
-    include Spree::Core::S3Support
-    supports_s3 :attachment
-    
+    #
+    # # Load user defined paperclip settings
+    # include Spree::Core::S3Support
+    # supports_s3 :attachment
     Spree::BannerBox.attachment_definitions[:attachment][:styles] = ActiveSupport::JSON.decode(Spree::Config[:banner_styles])
     Spree::BannerBox.attachment_definitions[:attachment][:path] = Spree::Config[:banner_path]
     Spree::BannerBox.attachment_definitions[:attachment][:url] = Spree::Config[:banner_url]
