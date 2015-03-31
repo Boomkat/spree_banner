@@ -7,6 +7,3 @@ module Spree
     preference :banner_default_style, :string, default: 'small'
   end
 end
-
-
-Spree::Banner_Config = Spree::BannerConfiguration.new
