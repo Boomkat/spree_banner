@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :page_title do %>
+    <%= t(:listing_banner_locations) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <div class="toolbar" data-hook="toolbar">
+      <ul class="actions header-action-links inline-menu">
+        <li id="new_banner_box_link">
+          <%= button_link_to t(:new_banner_location), new_admin_banner_box_locations_path       %>
+        </li>
+      </ul>
+    </div>
+<% end %>
+
+<%= render :partial => 'spree/admin/shared/banner_box_sub_menu' %>
+
+<% content_for :table_filter_title do %>
+    <%= Spree.t(:search) %>
+<% end %>
+
+
+
+
+<div id="new_banner_box_location" data-hook></div>
+
+<% if @locations.any? %>
+    <table class="index sortable" id="listing_banner_boxes" data-sortable-link="<%= update_positions_admin_banner_boxes_url() %>">
+      <colgroup>
+        <col style="width: 5%">
+        <col style="width: 15%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+        <col style="width: 17%;">
+      </colgroup>
+      <thead>
+      <tr data-hook="admin_banner_index_headers">
+        <th><%= t(:banner_location) %></th>
+        <th><%= t(:page) %></th>
+        <th data-hook="admin_banner_index_header_actions" class="actions"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @locations.each do |loc| %>
+          <tr id="<%= spree_dom_id loc %>" data-hook="admin_banner_locations_index_rows" class="<%= cycle('odd', 'even') %>">
+            <td class="align-center"><%= loc.location %></td>
+            <td class="align-center"><%= loc.page rescue '' %></td>
+            <td class="actions" data-hook="admin_banner_index_row_actions">
+              <%= link_to_edit loc, :no_text => true, :class => 'edit' %>
+              &nbsp;
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <div class="no-objects-found">
+      <%= t(:no_results) %>
+    </div>
+<% end %>
+
+</div>

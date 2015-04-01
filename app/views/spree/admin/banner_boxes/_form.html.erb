@@ -1,10 +1,9 @@
 <div data-hook="admin_banner_box_form_fields" class="row">
 
   <div class="left eight columns alpha" data-hook="admin_banner_box_form_left">
-    <%= f.field_container :category do %>
-      <%= f.label :category, raw(t(:category) + content_tag(:span, ' *', :class => 'required')) %>
-      <%= f.text_field :category, :class => 'fullwidth title' %>
-      <%= f.error_message_on :category %>
+    <%= f.field_container :banner_box_location do %>
+      <%= f.label :banner_box_location, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
+      <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location %>
     <% end %>
 
     <%= f.field_container :url do %>
@@ -23,7 +22,7 @@
     <% end %>
 
     <%= f.field_container :attachment do %>
-      <%= f.label :attachment, t(:attachment) %><br />
+      <%= f.label :attachment, t(:image) %><br />
       <%= f.file_field :attachment %>
       <%= f.error_message_on :attachment %>
     <% end %>
@@ -37,7 +36,7 @@
 
     <%= f.field_container :enabled do %>
       <%= f.label :enabled, t(:enabled) %><br />
-      <%= f.check_box :enabled %>
+      <%= f.check_box :enabled, :checked => true %>
       <%= f.error_message_on :enabled %>
     <% end %>
   </div>
@@ -46,5 +45,5 @@
 
   <div data-hook="admin_banner_box_form_additional_fields"></div>
 
-  <div class="clear"></div>
+  <div class§"clear"></div>
 </div>

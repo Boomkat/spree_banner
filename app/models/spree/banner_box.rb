@@ -1,9 +1,10 @@
 module Spree
   class BannerBox < ActiveRecord::Base
 
-    acts_as_list :scope => :category
+    belongs_to :banner_box_location
 
     validate :no_attachment_errors
+    validates_presence_of :banner_box_location
 
     has_attached_file :attachment,
                       styles: { mini: '48x48>', small: '100x100>', product: '240x240>', large: '600x600>' },
@@ -26,17 +27,9 @@ module Spree
     # we need to look at the write-queue for images which have not been saved yet
     after_post_process :find_dimensions
 
-    validates_presence_of :category
-    validates_attachment_presence :attachment
     validates_attachment_content_type :attachment, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/x-png', 'image/pjpeg'], :message => I18n.t(:images_only)
 
-    scope :enabled, lambda { |*categories|
-      if categories.empty?
-        where(:enabled => true)
-      else
-        where(:enabled => true).where(:category => categories)
-      end
-    }
+    scope :enabled, where(:enabled => true)
     #
     # # Load user defined paperclip settings
 
@@ -82,11 +75,6 @@ module Spree
       Spree::BannerBox.attachment_definitions[:attachment][:default_url] = SpreeBanner::Config[:banner_default_url]
       Spree::BannerBox.attachment_definitions[:attachment][:default_style] = SpreeBanner::Config[:banner_default_style]
     end
-
-    def self.categories_for_select
-      unscoped.pluck(:category).uniq.sort
-    end
-
 
     # if there are errors from the plugin, then add a more meaningful message
     def no_attachment_errors

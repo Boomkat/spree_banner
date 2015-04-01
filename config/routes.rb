@@ -1,5 +1,8 @@
 Spree::Core::Engine.routes.draw do
   
+  namespace :spree do
+    resources :tests
+  end
   namespace :admin do
     resources :banner_boxes do
       collection do
@@ -10,5 +13,10 @@ Spree::Core::Engine.routes.draw do
       end
     end
     resource :banner_box_settings
+
+    resources :banner_box_locations
+    resource :banner_box_heros
+
+
   end
 end

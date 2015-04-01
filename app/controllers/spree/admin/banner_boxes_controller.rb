@@ -1,7 +1,9 @@
 module Spree
   module Admin
     class BannerBoxesController < ResourceController
-      
+
+      before_action :reset_enabled_banners, only: [:create, :update]
+
       def index
         respond_with(@collection)
       end
@@ -33,7 +35,7 @@ module Spree
       end
       
       def location_after_save
-         edit_admin_banner_box_url(@banner_box)
+         admin_banner_boxes_url
       end
       
       def collection
@@ -43,6 +45,10 @@ module Spree
         
         @search = super.ransack(params[:q])
         @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
+      end
+
+      def reset_enabled_banners
+        Spree::BannerBox.update_all(:enabled => false)
       end
     end
   end

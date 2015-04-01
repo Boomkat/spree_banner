@@ -1,6 +1,8 @@
 <% content_for :sub_menu do %>
   <ul id="sub_nav" data-hook="admin_banner_box_sub_tabs" class="inline-menu">
-    <%= tab :banner_boxes, :match_path => '/banner_boxes' %>
+    <%= tab :banner_boxes, :match_path => '/banner_boxes', :label => "Banners" %>
+    <%= tab :banner_box_heros, :match_path => '/banner_box_heros', :label => t(:heros) %>
+    <%= tab :banner_box_locations, :match_path => '/banner_box_locations' %>
     <%= tab :banner_box_settings, edit_admin_banner_box_settings_url %>
   </ul>
 <% end %>
