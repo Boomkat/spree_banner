@@ -2,7 +2,7 @@
 
 <%= form_for [:admin, @banner_box], :html => { :multipart => true } do |f| %>
   <fieldset data-hook="new_banner_box">
-    <legend align="center"><%= t(:new_banner_box) %></legend>
+    <legend align="center"><%= t(:new_banner_hero) %></legend>
     <%= render :partial => 'form', :locals => { :f => f } %>
     <%= render :partial => 'spree/admin/shared/new_resource_links' %>
   </fieldset>

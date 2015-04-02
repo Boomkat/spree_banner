@@ -16,6 +16,7 @@ en:
   enabled: Enabled?
   url: Link url
   attachment: Attachment
+  listing_banner_heroes: Listing Heroes
   category: Category
   banner_boxes: Banners
   carousel: Carousel?
@@ -23,6 +24,9 @@ en:
   banner_location: Banner Location
   page: Page
   heros: Heros
+  new_banner_hero: New Heroß†
+  hero_location: Hero Location
+  new_banner_hero: New Hero
   show_only_enabled: "Show only enabled"
   notice_messages:
     banner_box_cloned: "Banner has been cloned"

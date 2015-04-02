@@ -1,12 +1,12 @@
 <% content_for :page_title do %>
-    <%= t(:listing_banner_boxes) %>
+    <%= t(:listing_banner_heroes) %>
 <% end %>
 
 <% content_for :page_actions do %>
     <div class="toolbar" data-hook="toolbar">
       <ul class="actions header-action-links inline-menu">
         <li id="new_banner_box_link">
-          <%= button_link_to t(:new_banner_box), new_object_url, {:remote => true, :icon => 'icon-plus', :id => 'admin_new_banner_box'} %>
+          <%= button_link_to t(:new_banner_hero), new_object_url, {:remote => true, :icon => 'icon-plus', :id => 'admin_new_banner_box'} %>
         </li>
       </ul>
     </div>
@@ -27,7 +27,7 @@
             <div class="alpha four columns">
               <div class="field">
                 <%= f.field_container :banner_box_location do %>
-                    <%= f.label :banner_box_location, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
+                    <%= f.label :banner_box_location, raw(t(:hero_location) + content_tag(:span, ' *', :class => 'required')) %>
                     <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location %>
                 <% end %>
               </div>
