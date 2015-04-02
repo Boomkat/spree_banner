@@ -15,7 +15,7 @@ Spree::Core::Engine.routes.draw do
     resource :banner_box_settings
 
     resources :banner_box_locations
-    resource :banner_box_heros
+    resources :banner_box_heros
 
 
   end

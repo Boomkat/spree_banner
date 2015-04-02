@@ -18,6 +18,7 @@ en:
   attachment: Attachment
   category: Category
   banner_boxes: Banners
+  carousel: Carousel?
   banner_box: Banner
   banner_location: Banner Location
   page: Page

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('.destroy_banner_style').live("click", function(e) {
+	$('.destroy_banner_style').on("click", function(e) {
 		e.preventDefault();
 		$(this).parent().remove();
 	});

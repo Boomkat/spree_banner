@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    class BannerBoxesController < ResourceController
+    class BannerBoxHerosController < ResourceController
 
       before_action :reset_enabled_banners, only: [:create, :update]
 
@@ -35,7 +35,7 @@ module Spree
       end
       
       def location_after_save
-         admin_banner_boxes_url
+        admin_banner_box_heros_path
       end
       
       def collection
@@ -48,7 +48,7 @@ module Spree
       end
 
       def reset_enabled_banners
-        Spree::BannerBox.where(:carousel => false).update_all(:enabled => false)
+        Spree::BannerBoxHero.update_all(:enabled => false)
       end
     end
   end
