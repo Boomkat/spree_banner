@@ -1,5 +1,5 @@
 module Spree
-  class BannerBox < ActiveRecord::Base
+  class BannerBoxHero < ActiveRecord::Base
     acts_as_list scope: [:position]
     belongs_to :banner_box_location
 
@@ -55,6 +55,9 @@ module Spree
       p
     end
 
+    def location(loc)
+      self.where(:location => loc).first
+    end
     def find_dimensions
       temporary = attachment.queued_for_write[:original]
       filename = temporary.path unless temporary.nil?

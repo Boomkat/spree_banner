@@ -1,0 +1,2 @@
+module BannerBoxLocationsHelper
+end
