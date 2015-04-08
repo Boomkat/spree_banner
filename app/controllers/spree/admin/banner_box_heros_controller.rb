@@ -2,7 +2,7 @@ module Spree
   module Admin
     class BannerBoxHerosController < ResourceController
 
-      # before_action :reset_enabled_banners, only: [:create, :update]
+      before_action :reset_enabled_heros, only: [:create, :update]
 
       def index
         respond_with(@collection)
@@ -42,10 +42,10 @@ module Spree
         @search = super.ransack(params[:q])
         @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
       end
-      # TODO: 1 hero per location
-      # def reset_enabled_banners
-      #   Spree::BannerBoxHero.update_all(:enabled => false)
-      # end
+
+      def reset_enabled_heros
+        Spree::BannerBoxHero.joins(:banner_box_location).where(spree_banner_box_locations: { id: params[:banner_box_hero][:banner_box_location_id]}).update_all(:enabled => false)
+      end
     end
   end
 end

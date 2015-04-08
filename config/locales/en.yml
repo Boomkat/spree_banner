@@ -11,7 +11,9 @@ en:
   banner_styles: "Paperclip Styles Banner"
   banner_url: "Banner URL"
   back_to_banner_boxes_list: "Back To Banner List"
+  back_to_banner_hero_list: "Back To Hero List"
   new_banner_box: "New Banner"
+  new_banner_hero: "New Banner"
   listing_banner_boxes: "Listing Banners"
   enabled: Enabled?
   url: Link url
@@ -22,9 +24,10 @@ en:
   carousel: Carousel?
   banner_box: Banner
   banner_location: Banner Location
+  hero_location: Hero Location
   page: Page
   heros: Heros
-  new_banner_hero: New Heroß†
+  new_banner_hero: New Hero
   hero_location: Hero Location
   new_banner_hero: New Hero
   show_only_enabled: "Show only enabled"

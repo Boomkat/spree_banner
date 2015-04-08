@@ -2,7 +2,8 @@
 
   <div class="left eight columns alpha" data-hook="admin_banner_box_form_left">
     <%= f.field_container :banner_box_location do %>
-      <%= f.label :banner_box_location, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
+      <%= f.label :banner_box_location, raw(t(:hero_location) + content_tag(:span, ' *', :class => 'required')) %>
+        <br/>
       <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location %>
     <% end %>
 
