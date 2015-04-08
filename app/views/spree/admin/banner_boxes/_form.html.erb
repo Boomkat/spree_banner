@@ -3,7 +3,7 @@
   <div class="left eight columns alpha" data-hook="admin_banner_box_form_left">
     <%= f.field_container :banner_box_location do %>
       <%= f.label :banner_box_location, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
-      <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location %>
+      <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location, {:class => "select2 fullwidth" }%>
     <% end %>
 
     <%= f.field_container :url do %>
@@ -37,7 +37,7 @@
     <%= f.field_container :alt_text do %>
       <%= f.label :alt_text, t(:alt_text) %>
       <%= f.text_field :alt_text, :class => 'fullwidth' %>
-      <%= f.error_message_on :alt_text %>
+    goedopup  <%= f.error_message_on :alt_text %>
     <% end %>
 
     <%= f.field_container :carousel do %>

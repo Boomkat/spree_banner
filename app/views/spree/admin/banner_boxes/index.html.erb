@@ -28,7 +28,7 @@
               <div class="field">
                 <%= f.field_container :banner_box_location do %>
                     <%= f.label :banner_box_location, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
-                    <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location %>
+                    <%= f.collection_select :banner_box_location_id, Spree::BannerBoxLocation.all, :id, :page_location, {}, { :class => "select2" } %>
                 <% end %>
               </div>
             </div>
