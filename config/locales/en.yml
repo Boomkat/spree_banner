@@ -1,5 +1,6 @@
 en:
-  images_only: "deve essere JPG, JPEG, PNG o GIF"
+  images_only: "JPG, JPEG, PNG o GIF"
+  general_settings: General Settings
   banner_box_settings: "Banner Settings"
   add_new_banner_style: "Add New Banner Style"
   banner_box_settings_warning: "You will need to regenerate thumbnails if you update the paperclip styles. Use rake paperclip:refresh:thumbnails CLASS=Spree::Banner to do this."
@@ -10,24 +11,37 @@ en:
   banner_path: "Banner Path"
   banner_styles: "Paperclip Styles Banner"
   banner_url: "Banner URL"
+  back_to_banner_location_list: "Back To Banner Location List"
   back_to_banner_boxes_list: "Back To Banner List"
+  back_to_banner_hero_list: "Back To Hero List"
   new_banner_box: "New Banner"
+  new_banner_hero: "New Hero"
   listing_banner_boxes: "Listing Banners"
   enabled: Enabled?
   url: Link url
+  search: Search
+  no_results: No Results
+  new_banner_location: New Banner Location
+  image: Image
+  location: Location
   attachment: Attachment
   listing_banner_heroes: Listing Heroes
   category: Category
+  new_hero: New Hero
   banner_boxes: Banners
   carousel: Carousel?
   banner_box: Banner
   banner_location: Banner Location
+  hero_location: Hero Location
   page: Page
   heros: Heros
-  new_banner_hero: New Heroß†
+  hero: Hero
+  destroy: Destroy
+  new_banner_hero: New Hero
   hero_location: Hero Location
   new_banner_hero: New Hero
-  show_only_enabled: "Show only enabled"
+  new_banner_location: New Banner Location
+  show_only_enabled: Show only enabled
   notice_messages:
     banner_box_cloned: "Banner has been cloned"
     banner_box_not_cloned: "Banner could not be cloned"
