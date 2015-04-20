@@ -31,6 +31,8 @@ en:
   banner_boxes: Banners
   carousel: Carousel?
   banner_box: Banner
+  banner_text: Banner Text
+  banner_style: Banner Style
   banner_location: Banner Location
   hero_location: Hero Location
   page: Page

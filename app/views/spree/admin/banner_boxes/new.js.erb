@@ -1,2 +1,9 @@
 $("#new_banner_box").html('<%= escape_javascript(render :template => "spree/admin/banner_boxes/new", :formats => [:html], :handlers => [:erb]) %>');
 $("#admin_new_banner_box").parent().hide();
+jQuery(function($) {
+    // Make select beautiful
+    $('select.select2').select2({
+        allowClear: true,
+        dropdownAutoWidth: true
+    });
+})
