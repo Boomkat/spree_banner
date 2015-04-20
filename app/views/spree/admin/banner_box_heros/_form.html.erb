@@ -13,6 +13,17 @@
       <%= f.error_message_on :url %>
     <% end %>
 
+
+    <%= f.field_container :banner_text do %>
+        <%= f.label :banner_text, t(:banner_text) %>
+        <%= f.text_field :banner_text, :class => 'fullwidth' %>
+        <%= f.error_message_on :banner_text %>
+    <% end %>
+    <%= f.field_container :banner_style do %>
+        <%= f.label :banner_style, raw(t(:banner_location) + content_tag(:span, ' *', :class => 'required')) %>
+        <%= f.select :banner_style, [['Black', 'banner-style-black'], ['White', 'banner-style-white']],{}, {:class => "select2" }%>
+    <% end %>
+
     <%= f.field_container :enabled do %>
         <%= f.label :enabled, t(:enabled) %><br />
         <%= f.check_box :enabled, :checked => true %>
