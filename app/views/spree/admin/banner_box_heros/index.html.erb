@@ -88,9 +88,9 @@
       <!--<span class="handle"></span>-->
     <!--</td>-->
     <td class="align-center"><%= image_tag(banner_box_hero.attachment(:mini)) %></td>
-            <td class="align-center"><%= banner_box_hero.banner_box_location.page_location rescue '' %></td>
             <td class="align-center"><%= banner_box_hero.banner_text rescue '' %></td>
             <td class="align-center"><%= banner_box_hero.banner_style.gsub('banner-style-','').capitalize rescue '' %></td>
+            <td class="align-center"><%= banner_box_hero.banner_box_location.page_location rescue '' %></td>
             <td class="align-center"><%= banner_box_hero.url rescue '' %></td>
             <td class="align-center"><%= banner_box_hero.enabled %></td>
             <td class="actions" data-hook="admin_banner_index_row_actions">

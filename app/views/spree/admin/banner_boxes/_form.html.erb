@@ -9,7 +9,7 @@
 
     <%= f.field_container :banner_text do %>
         <%= f.label :banner_text, t(:banner_text) %>
-        <%= f.text_field :banner_text, :class => 'fullwidth' %>
+        <%= f.text_area :banner_text, :class => 'fullwidth' %>
         <%= f.error_message_on :banner_text %>
     <% end %>
     <%= f.field_container :banner_style do %>
