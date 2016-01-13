@@ -14,9 +14,9 @@ module Spree
                       default_url: "/spree/:class/:id/:style/:basename.:extension",
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
                       s3_protocol:    "https",
-                      url:            ":s3_domain_url",
+                      url:            ":s3_alias_url",
                       attachment_url: ":s3_eu_url",
-                      s3_host_alias: 	"s3-eu-west-1.amazonaws.com",
+                      s3_host_alias: 	"assets.boomkat.com",
                       s3_credentials: Proc.new{|a| a.instance.s3_credentials }
 
     validates_attachment :attachment,
