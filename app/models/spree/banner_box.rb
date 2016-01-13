@@ -15,6 +15,7 @@ module Spree
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' },
                       s3_protocol:    "https",
                       url:            ":s3_alias_url",
+                      use_timestamp:  false,
                       attachment_url: ":s3_eu_url",
                       s3_host_alias: 	"assets.boomkat.com",
                       s3_credentials: Proc.new{|a| a.instance.s3_credentials }
